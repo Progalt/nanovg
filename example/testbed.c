@@ -100,6 +100,8 @@ int main()
 	glfwSetTime(0);
 	prevt = glfwGetTime();
 
+	int font = nvgCreateFont(vg, "Roboto", "example/data/Roboto-Regular.ttf");
+
 	while (!glfwWindowShouldClose(window))
 	{
 		double mx, my, t, dt;
@@ -140,6 +142,14 @@ int main()
 		nvgStrokeColor(vg, nvgRGBA(0, 0, 0, 255));
 		nvgStrokeWidth(vg, 3.0f);
 		nvgStroke(vg);
+
+		nvgResetScissor(vg);
+
+		nvgFillColor(vg, nvgRGBA(255, 255, 255, 255));
+
+		nvgFontFace(vg, "Roboto");
+		nvgFontSize(vg, 32.0f);
+		nvgText(vg, 100.0f, 100.0f, "Hello World", NULL);
 
 		nvgEndFrame(vg);
 

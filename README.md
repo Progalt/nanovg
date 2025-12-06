@@ -96,6 +96,17 @@ The data for the whole frame is buffered and flushed in `nvgEndFrame()`. The fol
 	glUniformBlockBinding(... , GLNVG_FRAG_BINDING);
 ```
 
+## Changes
+
+These are changes made since forking it. Further down the list is older. 
+
+- [X] Better texture id lookup -> See PR [#656](https://github.com/memononen/nanovg/pull/656) on the original nanovg repo. 
+- [X] Added the ability to create colors using a 32 bit integer (Hex in format 0xAARRGGBB) -> `nvgHex`
+- [X] Example Data is now stored in a dedicated directory and copied to the output via CMake.  
+- [X] Added CMakeLists.txt for CMake support. 
+
+**Anything not listed here is from the original nanovg before forking. I'm calling this NanoVG 1.0**
+
 ## API Reference
 
 See the header file [nanovg.h](/src/nanovg.h) for API reference.
