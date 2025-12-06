@@ -129,6 +129,8 @@ int main()
 
 		nvgBeginFrame(vg, winWidth, winHeight, pxRatio);
 
+		nvgScissor(vg, 15.0f, 15.0f, 100.0f, 100.0f);
+
 		nvgBeginPath(vg);
 		nvgRect(vg, 10.0f, 10.0f, 32.0f, 64.0f);
 
