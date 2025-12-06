@@ -194,6 +194,8 @@ NVGcolor nvgRGBA(unsigned char r, unsigned char g, unsigned char b, unsigned cha
 // Returns a color value from red, green, blue and alpha values.
 NVGcolor nvgRGBAf(float r, float g, float b, float a);
 
+// Returns a color from a 32 bit hex value in format 0xAARRGGBB
+NVGcolor nvgHex(unsigned int hex);
 
 // Linearly interpolates from color c0 to c1, and returns resulting color value.
 NVGcolor nvgLerpRGBA(NVGcolor c0, NVGcolor c1, float u);

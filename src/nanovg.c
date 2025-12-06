@@ -468,6 +468,16 @@ NVGcolor nvgTransRGBAf(NVGcolor c, float a)
 	return c;
 }
 
+NVGcolor nvgHex(unsigned int hex)
+{
+	unsigned char a = (hex >> 24) & 0xFF;
+	unsigned char r = (hex >> 16) & 0xFF;
+	unsigned char g = (hex >> 8) & 0xFF;
+	unsigned char b = hex & 0xFF;
+
+	return nvgRGBA(r, g, b, a);
+}
+
 NVGcolor nvgLerpRGBA(NVGcolor c0, NVGcolor c1, float u)
 {
 	int i;
