@@ -98,8 +98,11 @@ The data for the whole frame is buffered and flushed in `nvgEndFrame()`. The fol
 
 ## Changes
 
-These are changes made since forking it. Further down the list is older. 
+These are changes made since forking it. Further down the list is older. Some changes are not complete.
 
+- [ ] Have the functionality for the user building nanovg to define their own stb_image.h include path
+- [X] Can no define if nanovg should implement stb_image.h with `NVG_NO_STB_IMAGE_IMPLEMENTATION`
+- [X] CMake will now fetch stb_image.h if it is requested and it doesn't exist, to remove the required dependancy on it.
 - [X] Better texture id lookup -> See PR [#656](https://github.com/memononen/nanovg/pull/656) on the original nanovg repo. 
 - [X] Added the ability to create colors using a 32 bit integer (Hex in format 0xAARRGGBB) -> `nvgHex`
 - [X] Example Data is now stored in a dedicated directory and copied to the output via CMake.  
