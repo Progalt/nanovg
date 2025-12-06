@@ -131,19 +131,14 @@ int main()
 
 		nvgBeginFrame(vg, winWidth, winHeight, pxRatio);
 
-		nvgScissor(vg, 15.0f, 15.0f, 100.0f, 100.0f);
+		NVGpaint paint = nvgLinearGradient(vg, 20.0f, 40.0f, 100.0f, 100.0f, nvgRGB(255, 0, 0), nvgRGB(0, 255, 0));
 
 		nvgBeginPath(vg);
-		nvgRect(vg, 10.0f, 10.0f, 32.0f, 64.0f);
+		nvgRect(vg, 10.0f, 10.0f, 300.0f, 300.0f);
 
-		nvgFillColor(vg, nvgRGBA(255, 0, 0, 255));
+		nvgFillPaint(vg, paint);
 		nvgFill(vg);
 
-		nvgStrokeColor(vg, nvgRGBA(0, 0, 0, 255));
-		nvgStrokeWidth(vg, 3.0f);
-		nvgStroke(vg);
-
-		nvgResetScissor(vg);
 
 		nvgFillColor(vg, nvgRGBA(255, 255, 255, 255));
 

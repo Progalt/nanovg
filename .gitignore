@@ -31,3 +31,6 @@ out/
 
 ## xcode specific
 *xcuserdata*
+
+# The cmake list now handles downloading an up to date version
+src/stb_image.h
