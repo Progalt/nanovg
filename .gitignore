@@ -22,7 +22,12 @@ ehthumbs.db
 Thumbs.db
 
 ## Build dir
-build/*
+build/
+out/
+
+# IDE Folders
+.vs/
+.vscode/
 
 ## xcode specific
 *xcuserdata*

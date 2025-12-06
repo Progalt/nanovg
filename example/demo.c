@@ -811,7 +811,7 @@ int loadDemoData(NVGcontext* vg, DemoData* data)
 
 	for (i = 0; i < 12; i++) {
 		char file[128];
-		snprintf(file, 128, "../example/images/image%d.jpg", i+1);
+		snprintf(file, 128, "example/data/images/image%d.jpg", i+1);
 		data->images[i] = nvgCreateImage(vg, file, 0);
 		if (data->images[i] == 0) {
 			printf("Could not load %s.\n", file);
@@ -819,22 +819,22 @@ int loadDemoData(NVGcontext* vg, DemoData* data)
 		}
 	}
 
-	data->fontIcons = nvgCreateFont(vg, "icons", "../example/entypo.ttf");
+	data->fontIcons = nvgCreateFont(vg, "icons", "example/data/entypo.ttf");
 	if (data->fontIcons == -1) {
 		printf("Could not add font icons.\n");
 		return -1;
 	}
-	data->fontNormal = nvgCreateFont(vg, "sans", "../example/Roboto-Regular.ttf");
+	data->fontNormal = nvgCreateFont(vg, "sans", "example/data/Roboto-Regular.ttf");
 	if (data->fontNormal == -1) {
 		printf("Could not add font italic.\n");
 		return -1;
 	}
-	data->fontBold = nvgCreateFont(vg, "sans-bold", "../example/Roboto-Bold.ttf");
+	data->fontBold = nvgCreateFont(vg, "sans-bold", "example/data/Roboto-Bold.ttf");
 	if (data->fontBold == -1) {
 		printf("Could not add font bold.\n");
 		return -1;
 	}
-	data->fontEmoji = nvgCreateFont(vg, "emoji", "../example/NotoEmoji-Regular.ttf");
+	data->fontEmoji = nvgCreateFont(vg, "emoji", "example/data/NotoEmoji-Regular.ttf");
 	if (data->fontEmoji == -1) {
 		printf("Could not add font emoji.\n");
 		return -1;
@@ -1217,7 +1217,7 @@ void saveScreenShot(int w, int h, int premult, const char* name)
 	unsigned char* image = (unsigned char*)malloc(w*h*4);
 	if (image == NULL)
 		return;
-	glReadPixels(0, 0, w, h, GL_RGBA, GL_UNSIGNED_BYTE, image);
+	// glReadPixels(0, 0, w, h, GL_RGBA, GL_UNSIGNED_BYTE, image);
 	if (premult)
 		unpremultiplyAlpha(image, w, h, w*4);
 	else
