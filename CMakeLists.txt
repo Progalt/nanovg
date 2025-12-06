@@ -48,4 +48,9 @@ if(NANOVG_BUILD_EXAMPLES)
             $<TARGET_FILE_DIR:nanovg_demo>/example/data
         COMMENT "Copying example/data to build directory."
     )
+
+    # Create a testbed 
+
+    add_executable(nanovg_test "example/glad/glad.c" "example/testbed.c")
+    target_link_libraries(nanovg_test PRIVATE nanovg glfw)
 endif()
